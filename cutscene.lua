@@ -170,14 +170,13 @@ RegisterNetEvent('cutscene:start')
 AddEventHandler('cutscene:start', function()
 	PrepareMusicEvent("FM_INTRO_START") 
 	TriggerMusicEvent("FM_INTRO_START") 
-    local plyrId = PlayerPedId() 
-    -----------------------------------------------
+        local plyrId = PlayerPedId() 
 	if IsMale(plyrId) then
 		RequestCutsceneWithPlaybackList("MP_INTRO_CONCAT", 31, 8)
 	else	
 		RequestCutsceneWithPlaybackList("MP_INTRO_CONCAT", 103, 8)
 	end
-    while not HasCutsceneLoaded() do Wait(10) end 
+        while not HasCutsceneLoaded() do Wait(10) end 
 	if IsMale(plyrId) then
 		RegisterEntityForCutscene(0, 'MP_Male_Character', 3, GetEntityModel(PlayerPedId()), 0)
 		RegisterEntityForCutscene(PlayerPedId(), 'MP_Male_Character', 0, 0, 0)
@@ -205,12 +204,10 @@ AddEventHandler('cutscene:start', function()
         end
     end
 	
-	NewLoadSceneStartSphere(-1212.79, -1673.52, 7, 1000, 0) 
-    -----------------------------------------------
+NewLoadSceneStartSphere(-1212.79, -1673.52, 7, 1000, 0) 
     SetWeatherTypeNow("EXTRASUNNY") 
     StartCutscene(4) 
-
-    Wait(38600) --- custscene time
+    Wait(38600) 
      StopCutsceneImmediately()
 	for v_3=0, 6, 1 do
 		DeleteEntity(ped[v_3])
@@ -218,7 +215,6 @@ AddEventHandler('cutscene:start', function()
 	PrepareMusicEvent("AC_STOP")
 	TriggerMusicEvent("AC_STOP")
 end) 
-
 
 function IsMale(ped)
 	if IsPedModel(ped, 'mp_m_freemode_01') then
