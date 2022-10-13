@@ -177,7 +177,7 @@ AddEventHandler('cutscene:start', function()
 	else	
 		RequestCutsceneWithPlaybackList("MP_INTRO_CONCAT", 103, 8)
 	end
-    while not HasCutsceneLoaded() do Wait(10) end --- waiting for the cutscene to load
+    while not HasCutsceneLoaded() do Wait(10) end 
 	if IsMale(plyrId) then
 		RegisterEntityForCutscene(0, 'MP_Male_Character', 3, GetEntityModel(PlayerPedId()), 0)
 		RegisterEntityForCutscene(PlayerPedId(), 'MP_Male_Character', 0, 0, 0)
