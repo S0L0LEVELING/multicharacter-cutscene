@@ -166,11 +166,11 @@ function sub_b747(ped, a_1)
     end
 end
 
-RegisterNetEvent('cutscene:start') -- ORDER CREATION
+RegisterNetEvent('cutscene:start') 
 AddEventHandler('cutscene:start', function()
-	PrepareMusicEvent("FM_INTRO_START") --FM_INTRO_START
-	TriggerMusicEvent("FM_INTRO_START") --FM_INTRO_START
-    local plyrId = PlayerPedId() -- PLAYER ID
+	PrepareMusicEvent("FM_INTRO_START") 
+	TriggerMusicEvent("FM_INTRO_START") 
+    local plyrId = PlayerPedId() 
     -----------------------------------------------
 	if IsMale(plyrId) then
 		RequestCutsceneWithPlaybackList("MP_INTRO_CONCAT", 31, 8)
@@ -205,10 +205,10 @@ AddEventHandler('cutscene:start', function()
         end
     end
 	
-	NewLoadSceneStartSphere(-1212.79, -1673.52, 7, 1000, 0) ----- avoid texture bugs
+	NewLoadSceneStartSphere(-1212.79, -1673.52, 7, 1000, 0) 
     -----------------------------------------------
-    SetWeatherTypeNow("EXTRASUNNY") ---- SUN TIME
-    StartCutscene(4) --- START the custscene
+    SetWeatherTypeNow("EXTRASUNNY") 
+    StartCutscene(4) 
 
     Wait(38600) --- custscene time
      StopCutsceneImmediately()
